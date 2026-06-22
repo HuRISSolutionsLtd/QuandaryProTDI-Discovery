@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Moment of Reflection — QuandaryPRO</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&family=IBM+Plex+Sans:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg:            #0D1117;
+    --gold:          #B59E5B;
+    --text-primary:  #e8e6e0;
+    --text-secondary:#a0a4b4;
+    --text-muted:    #8a96ae;
+    --rule:          #1c2236;
+    --rule-accent:   #232d45;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text-primary);
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 300;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .container {
+    max-width: 660px;
+    margin: 0 auto;
+    padding: 0 36px;
+  }
+
+  .site-header {
+    padding: 44px 0 0;
+    opacity: 0;
+    animation: fadeUp 0.9s ease forwards;
+    animation-delay: 0.2s;
+  }
+
+  .site-mark {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 300;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .site-mark:hover { color: var(--gold); }
+
+  .rule-top {
+    height: 1px;
+    background: var(--rule-accent);
+    margin: 28px 0 0;
+    opacity: 0;
+    animation: fadeUp 0.9s ease forwards;
+    animation-delay: 0.35s;
+  }
+
+  .block {
+    padding: 52px 0 0;
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.85s ease, transform 0.85s ease;
+  }
+
+  .block.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .block-rule {
+    height: 1px;
+    background: var(--rule);
+    margin-top: 52px;
+    padding-top: 0;
+  }
+
+  .declaration {
+    font-family: 'IBM Plex Serif', serif;
+    font-weight: 300;
+    font-size: clamp(20px, 3.2vw, 27px);
+    line-height: 1.55;
+    color: var(--text-primary);
+    letter-spacing: -0.01em;
+  }
+
+  .observation {
+    font-family: 'IBM Plex Serif', serif;
+    font-weight: 300;
+    font-size: clamp(15px, 2.1vw, 17px);
+    line-height: 1.8;
+    color: var(--text-secondary);
+    font-style: italic;
+    letter-spacing: 0.01em;
+  }
+
+  .question {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 300;
+    font-size: clamp(15px, 2.1vw, 17px);
+    line-height: 1.8;
+    color: var(--text-primary);
+    letter-spacing: 0.01em;
+  }
+
+  .question + .question { padding-top: 36px; }
+
+  .attribution {
+    font-family: 'IBM Plex Serif', serif;
+    font-weight: 300;
+    font-size: clamp(15px, 2.1vw, 17px);
+    line-height: 1.75;
+    color: var(--gold);
+    font-style: italic;
+    letter-spacing: 0.01em;
+  }
+
+  .return-block {
+    padding: 60px 0 88px;
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.85s ease, transform 0.85s ease;
+    transition-delay: 0.15s;
+  }
+
+  .return-block.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .return-rule {
+    height: 1px;
+    background: var(--rule-accent);
+    margin-bottom: 36px;
+  }
+
+  .return-link {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 300;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    display: inline-block;
+  }
+
+  .return-link:hover { color: var(--gold); }
+  .return-link::after { content: ' →'; letter-spacing: 0; }
+
+  .footer-mark {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 300;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    margin-top: 16px;
+    display: block;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .block, .return-block {
+      transition: none;
+      opacity: 1;
+      transform: none;
+    }
+    .site-header, .rule-top {
+      animation: none;
+      opacity: 1;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .container { padding: 0 24px; }
+    .site-header { padding-top: 32px; }
+    .block { padding-top: 40px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <header class="site-header">
+    <a href="#briefing" class="site-mark">QuandaryPRO</a>
+  </header>
+
+  <div class="rule-top"></div>
+
+  <!-- Declaration -->
+  <div class="block" data-delay="0">
+    <p class="declaration">The responsibility for successful execution delivery — and the strategic outcomes it produces — rests with those who hold enterprise value creation in their hands.</p>
+  </div>
+
+  <div class="block block-rule" data-delay="80"></div>
+
+  <!-- Observation 1 -->
+  <div class="block" data-delay="120">
+    <p class="observation">Every strategic plan rests on an assumption that is almost never examined. That the leadership and those in critical execution roles are capable of delivering it — at the quality it demands, under the pressure it will generate, in the direction it requires.</p>
+  </div>
+
+  <!-- Observation 2 -->
+  <div class="block" data-delay="160">
+    <p class="observation">That assumption is where execution value is most often lost. Not in the strategy itself. In the gap between what the plan requires and what those in critical execution roles can reliably deliver.</p>
+  </div>
+
+  <!-- Observation 3 -->
+  <div class="block" data-delay="200">
+    <p class="observation">That gap is rarely visible from the centre. It doesn't announce itself. It accumulates — quietly, incrementally — until its cost becomes impossible to ignore.</p>
+  </div>
+
+  <!-- Observation 4 -->
+  <div class="block" data-delay="240">
+    <p class="observation">At that point, the question is no longer whether the gap exists. It is what it has already cost — and what closing it is now worth.</p>
+  </div>
+
+  <div class="block block-rule" data-delay="280"></div>
+
+  <!-- Question 1 -->
+  <div class="block" data-delay="340">
+    <p class="question">Do you have evidence — rather than assumption — that the right leadership and critical execution capability are in place to deliver what your strategy requires?</p>
+  </div>
+
+  <!-- Question 2 -->
+  <div class="block" data-delay="380">
+    <p class="question">And if that evidence is absent or incomplete, do you know what that gap is currently costing you in unrealised enterprise value?</p>
+  </div>
+
+  <div class="block block-rule" data-delay="420"></div>
+
+  <!-- Attribution -->
+  <div class="block" data-delay="460">
+    <p class="attribution">If these questions surface more uncertainty than clarity, that is precisely where QuandaryPRO TDI begins.</p>
+  </div>
+
+  <!-- Return -->
+  <div class="return-block" id="return-block">
+    <div class="return-rule"></div>
+    <a href="#briefing" class="return-link">Initiate a briefing</a>
+    <span class="footer-mark">QuandaryPRO Ltd</span>
+  </div>
+
+</div>
+
+<script>
+  const blocks = document.querySelectorAll('.block');
+  const returnBlock = document.getElementById('return-block');
+
+  function revealOnScroll() {
+    const wh = window.innerHeight;
+
+    blocks.forEach(block => {
+      const rect = block.getBoundingClientRect();
+      if (rect.top < wh * 0.88) {
+        const delay = parseInt(block.getAttribute('data-delay') || 0);
+        setTimeout(() => block.classList.add('visible'), delay);
+      }
+    });
+
+    if (returnBlock.getBoundingClientRect().top < wh * 0.92) {
+      returnBlock.classList.add('visible');
+    }
+  }
+
+  window.addEventListener('load', () => setTimeout(revealOnScroll, 300));
+  window.addEventListener('scroll', revealOnScroll, { passive: true });
+</script>
+
+</body>
+</html>
