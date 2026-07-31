@@ -35,35 +35,25 @@
     padding: 0 36px;
   }
 
-  .site-header {
-    padding: 44px 0 0;
-    opacity: 0;
-    animation: fadeUp 0.9s ease forwards;
-    animation-delay: 0.2s;
+  .site-logo-wrap {
+    padding: 44px 0 20px;
   }
 
-  .site-mark {
-    font-family: 'IBM Plex Sans', sans-serif;
-    font-weight: 300;
-    font-size: 11px;
-    letter-spacing: 0.2em;
-    color: var(--text-muted);
-    text-transform: uppercase;
+  .site-logo-wrap a {
+    display: inline-block;
     text-decoration: none;
-    transition: color 0.3s ease;
   }
-.site-logo {
-    display: block;
-    height: 32px;
+
+  .site-logo-wrap img {
+    height: 36px;
     width: auto;
-    opacity: 1;
+    display: block;
   }
-  .site-mark:hover { color: var(--gold); }
 
   .rule-top {
     height: 1px;
     background: var(--rule-accent);
-    margin: 28px 0 0;
+    margin: 8px 0 0;
     opacity: 0;
     animation: fadeUp 0.9s ease forwards;
     animation-delay: 0.35s;
@@ -184,7 +174,7 @@
       opacity: 1;
       transform: none;
     }
-    .site-header, .rule-top {
+    .rule-top {
       animation: none;
       opacity: 1;
     }
@@ -192,7 +182,6 @@
 
   @media (max-width: 480px) {
     .container { padding: 0 24px; }
-    .site-header { padding-top: 32px; }
     .block { padding-top: 40px; }
   }
 </style>
@@ -200,15 +189,12 @@
 <body>
 
 <div class="container">
-<div class="container">
-  <div style="padding: 44px 0 0;">
+
+  <div class="site-logo-wrap">
     <a href="https://www.quandarypro.ai/briefing-request">
-      <img src="prism-mark-3x.png" alt="QuandaryPRO TDI" style="height: 32px; width: auto; display: block;">
+      <img src="prism-mark-3x.png" alt="QuandaryPRO TDI">
     </a>
   </div>
-  <header class="site-header">
-<a href="https://www.quandarypro.ai/briefing-request"><img src="prism-mark-3x.png" alt="QuandaryPRO TDI" style="height: 32px; width: auto; opacity: 1 !important; display: block;"></a>
-</header>
 
   <div class="rule-top"></div>
 
@@ -261,7 +247,7 @@
   <!-- Return -->
   <div class="return-block" id="return-block">
     <div class="return-rule"></div>
-    href="https://www.quandarypro.ai/briefing-request" class="return-link">Initiate a briefing</a>
+    <a href="https://www.quandarypro.ai/briefing-request" class="return-link">Initiate a briefing</a>
     <span class="footer-mark">QuandaryPRO Ltd</span>
   </div>
 
